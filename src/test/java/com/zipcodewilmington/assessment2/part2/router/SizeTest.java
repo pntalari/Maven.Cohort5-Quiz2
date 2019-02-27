@@ -51,15 +51,6 @@ public class SizeTest {
         Assert.assertEquals(expectedSize, actualSize);
     }
 
-
-
-
-
-
-
-
-
-
     class Pair<KeyType, ValueTyp> {
         private KeyType key;
         private ValueTyp value;

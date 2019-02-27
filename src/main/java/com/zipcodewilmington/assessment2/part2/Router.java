@@ -3,27 +3,31 @@ package com.zipcodewilmington.assessment2.part2;
 import java.util.HashMap;
 
 public class Router {
-    HashMap<String, String> str = new HashMap();
+    HashMap<String, String> list = new HashMap();
+
 
     public void add(String path, String controller) {
-        str.put(path,controller);
+
+        list.put(path,controller);
     }
 
     public Integer size() {
 
-        return str.size();
+        return list.size();
     }
 
     public String getController(String path) {
 
-        return str.toString();
+        return list.get(path).toString();
     }
 
     public void update(String path, String studentController) {
+        for (HashMap
 
     }
 
     public void remove(String path) {
-        str.remove(path);
+
+        list.remove(path);
     }
 }
