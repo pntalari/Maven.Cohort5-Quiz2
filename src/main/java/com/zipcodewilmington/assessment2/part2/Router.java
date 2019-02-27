@@ -1,6 +1,7 @@
 package com.zipcodewilmington.assessment2.part2;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Router {
     HashMap<String, String> list = new HashMap();
@@ -18,16 +19,22 @@ public class Router {
 
     public String getController(String path) {
 
-        return list.get(path).toString();
+        return list.get(path);
     }
 
     public void update(String path, String studentController) {
-        for (HashMap
+        for (Map.Entry<String,String> entry: list.entrySet())
+        {
+            if (entry.getKey().equals(path))
+            {
+                list.put(entry.getKey(),studentController);
+            }
+        }
 
     }
 
     public void remove(String path) {
-
         list.remove(path);
+
     }
 }
