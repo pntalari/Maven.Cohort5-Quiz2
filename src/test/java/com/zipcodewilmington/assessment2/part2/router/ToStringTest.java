@@ -20,7 +20,6 @@ public class ToStringTest {
         // when
         String actualString = router.toString();
 
-
         // then
         Assert.assertEquals(expectedString, actualString);
     }

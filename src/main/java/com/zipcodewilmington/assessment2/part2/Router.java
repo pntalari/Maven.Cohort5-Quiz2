@@ -2,10 +2,11 @@ package com.zipcodewilmington.assessment2.part2;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class Router {
-    HashMap<String, String> list = new HashMap();
-
+    SortedMap<String, String> list = new TreeMap();
 
     public void add(String path, String controller) {
 
@@ -30,11 +31,20 @@ public class Router {
                 list.put(entry.getKey(),studentController);
             }
         }
-
     }
 
     public void remove(String path) {
         list.remove(path);
+    }
 
+    @Override
+    public String toString()
+    {
+        String strRet = "";
+
+        for (Map.Entry<String,String> entry: list.entrySet()) {
+            strRet += entry.getKey() + " -> " + entry.getValue() + "\n";
+        }
+        return strRet;
     }
 }
