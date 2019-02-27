@@ -13,7 +13,8 @@ public class ArrayUtility {
     public Integer[] rotate(Integer[] array, Integer index) {
         Integer [] temp = new Integer[array.length];
 
-        System.arraycopy(array,array.length-index,temp,0,index);
+
+        System.arraycopy(array,array.length-index-1,temp,0,index);
         System.arraycopy(array,0,temp,index,array.length-index);
 
         return temp;

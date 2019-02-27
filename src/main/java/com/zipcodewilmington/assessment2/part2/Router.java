@@ -6,11 +6,11 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class Router {
-    SortedMap<String, String> list = new TreeMap();
+    Map<String, String> list = new TreeMap();
 
     public void add(String path, String controller) {
 
-        list.put(path,controller);
+        list.put(path, controller);
     }
 
     public Integer size() {
@@ -24,11 +24,9 @@ public class Router {
     }
 
     public void update(String path, String studentController) {
-        for (Map.Entry<String,String> entry: list.entrySet())
-        {
-            if (entry.getKey().equals(path))
-            {
-                list.put(entry.getKey(),studentController);
+        for (Map.Entry<String, String> entry : list.entrySet()) {
+            if (entry.getKey().equals(path)) {
+                list.put(entry.getKey(), studentController);
             }
         }
     }
@@ -38,11 +36,10 @@ public class Router {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String strRet = "";
 
-        for (Map.Entry<String,String> entry: list.entrySet()) {
+        for (Map.Entry<String, String> entry : list.entrySet()) {
             strRet += entry.getKey() + " -> " + entry.getValue() + "\n";
         }
         return strRet;

@@ -6,14 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListUtility {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
 
     public Boolean add(int i) {
         Boolean boolRet;
+
         if (list.add(i))
         boolRet = true;
         else
             boolRet = false;
+
         return boolRet;
     }
 
