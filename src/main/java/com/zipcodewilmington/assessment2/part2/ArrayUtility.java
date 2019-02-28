@@ -1,6 +1,7 @@
 package com.zipcodewilmington.assessment2.part2;
 
 public class ArrayUtility {
+
     public Integer[] merge(Integer[] array1, Integer[] array2) {
         Integer arr2len = array2.length;
         Integer arr1len = array1.length;

@@ -1,7 +1,5 @@
 package com.zipcodewilmington.assessment2.part2;
 
-import com.j256.ormlite.stmt.query.In;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,9 +39,9 @@ public class ListUtility {
     }
 
     public Integer mostCommon() {
-        int count = 1, tempcnt;
-        int pop = list.get(0);
-        int temp = 0;
+        Integer count = 1, tempcnt;
+        Integer pop = list.get(0);
+        Integer temp = 0;
         for (int i = 0; i < list.size() - 1; i++) {
             temp = list.get(i);
             tempcnt = 0;
@@ -62,12 +60,5 @@ public class ListUtility {
 
     public Boolean contains(Integer valueToAdd) {
       return list.contains(valueToAdd);
-//        Boolean bool;
-//        if (list.contains(valueToAdd)) {
-//            bool = true;
-//        } else {
-//            bool = false;
-//        }
-//        return bool;
     }
 }
