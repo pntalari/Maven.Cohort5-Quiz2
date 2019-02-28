@@ -13,7 +13,7 @@ public class ArrayUtility {
     public Integer[] rotate(Integer[] array, Integer index) {
         Integer temp, j;
 
-        for(j = 0;j<=index;j++) {
+        for(j = 0;j<index;j++) {
             temp = array[0];
             for (int i = 0; i < array.length - 1 ; i++) {
                 array[i] = array[i + 1];
