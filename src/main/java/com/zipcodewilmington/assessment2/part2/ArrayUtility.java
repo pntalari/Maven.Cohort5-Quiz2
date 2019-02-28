@@ -4,33 +4,34 @@ public class ArrayUtility {
     public Integer[] merge(Integer[] array1, Integer[] array2) {
         Integer arr2len = array2.length;
         Integer arr1len = array1.length;
-        Integer[] finArr = new Integer[arr1len+arr2len];
-        System.arraycopy(array1,0,finArr,0,arr1len);
-        System.arraycopy(array2,0,finArr,arr1len,arr2len);
+        Integer[] finArr = new Integer[arr1len + arr2len];
+        System.arraycopy(array1, 0, finArr, 0, arr1len);
+        System.arraycopy(array2, 0, finArr, arr1len, arr2len);
         return finArr;
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
-        Integer [] temp = new Integer[array.length];
+        Integer temp, j;
 
-
-        System.arraycopy(array,array.length-index-1,temp,0,index);
-        System.arraycopy(array,0,temp,index,array.length-index);
-
-        return temp;
+        for(j = 0;j<=index;j++) {
+            temp = array[0];
+            for (int i = 0; i < array.length - 1 ; i++) {
+                array[i] = array[i + 1];
+            }
+             array[array.length - 1] = temp;
+        }
+        return array;
     }
 
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
-        Integer retResult=0;
-        for (Integer num: array1) {
-            if (num == valueToEvaluate)
-            {
+        Integer retResult = 0;
+        for (Integer num : array1) {
+            if (num == valueToEvaluate) {
                 retResult++;
             }
         }
-        for (Integer num: array2) {
-            if(num == valueToEvaluate)
-            {
+        for (Integer num : array2) {
+            if (num == valueToEvaluate) {
                 retResult++;
             }
         }
@@ -38,21 +39,17 @@ public class ArrayUtility {
     }
 
     public Integer mostCommon(Integer[] array) {
-        int count =1, tempcnt;
+        int count = 1, tempcnt;
         int pop = array[0];
         int temp = 0;
-        for(int i = 0;i<array.length-1;i++)
-        {
+        for (int i = 0; i < array.length - 1; i++) {
             temp = array[i];
             tempcnt = 0;
-            for(int j = 0;j<array.length;j++)
-            {
-                if (temp == array[j])
-                {
+            for (int j = 0; j < array.length; j++) {
+                if (temp == array[j]) {
                     tempcnt++;
                 }
-                if (tempcnt > count)
-                {
+                if (tempcnt > count) {
                     pop = temp;
                     count = tempcnt;
                 }
