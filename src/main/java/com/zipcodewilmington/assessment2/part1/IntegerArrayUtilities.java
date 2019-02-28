@@ -23,7 +23,6 @@ public class IntegerArrayUtilities {
         }
         return arr;
     }
-
     public Integer getSumOfFirstTwo(Integer[] array) {
 
         return array[0] + array[1];
